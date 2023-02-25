@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{cat}}">{{msg}}</div>
+{% endfor %}
+<form action="" method="post" class="form-contant">
+  <p><label>Ім'я: </label> <input type="text" name="name" value="" required />
+  <p><label>Вік: </label> <input type="text" name="old" value="" required />
+  <p><label>Місто: </label> <input type="text" name="city" value="" required />
+  <p><label>Email: </label> <input type="text" name="email" value="" required />
+  <p><label>Пароль: </label> <input type="password" name="psw" value="" required />
+  <p><label>Повторити пароль: </label> <input type="password" name="psw2" value="" required />
+  <p><input type="submit" value="Реєстрація" />
+</form>
+{% endblock %}
